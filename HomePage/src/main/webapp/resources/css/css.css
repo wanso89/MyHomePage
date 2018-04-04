@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.jumbotron{
+	margin-top : 50px;
+	background-image: url('../images/torres.jpg');
+	background-size : cover;
+	text-shadow: black 0.2em 0.2em 0.2em;
+	color:white;
+}
