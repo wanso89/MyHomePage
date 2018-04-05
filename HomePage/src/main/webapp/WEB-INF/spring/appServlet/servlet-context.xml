@@ -18,10 +18,14 @@
 	</bean>
 	
 	<mvc:resources location="/resources/css/" mapping="/css/**"/>
+	<mvc:resources location="/resources/js/" mapping="/js/**"/>
 	<mvc:resources location="/resources/images/" mapping="/images/**"/>
+	
+	
 	
 	
 	<mvc:view-controller path="/" view-name="index"/>
 	<mvc:view-controller path="joinForm" view-name="joinForm"/>
+	<mvc:view-controller path="boardForm" view-name="boardForm"/>
 		
 </beans>

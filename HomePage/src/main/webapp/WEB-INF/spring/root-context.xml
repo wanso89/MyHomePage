@@ -22,11 +22,13 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:com/homepage/config/MemberMapper.xml</value>
+				<value>classpath:com/homepage/config/BoardMapper.xml</value>
 			</list>
 		</property>
 		<property name="typeAliases">
 			<list>
 				<value>com.homepage.dto.MemberDTO</value>
+				<value>com.homepage.dto.BoardDTO</value>
 			</list>
 		</property>
 	</bean>

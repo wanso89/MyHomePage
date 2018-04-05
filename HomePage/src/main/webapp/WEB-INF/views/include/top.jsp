@@ -23,10 +23,10 @@
                         <a href="joinForm">회원가입</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#">로그인</a>
+                        <a href="loginForm">로그인</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">게시판</a>
+                        <a href="boardForm">게시판</a>
                     </li>
                 </ul>
             </div>
