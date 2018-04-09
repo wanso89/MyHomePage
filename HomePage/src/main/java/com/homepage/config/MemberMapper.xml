@@ -17,5 +17,11 @@
 	where userid=#{userid}
 	</select>
 	
-
+	<!-- 로그인 체크 -->
+	<select id="loginCheck" parameterType="hashmap" resultType="int">
+	select count(*) from member
+	where userid=#{userid}
+	and passwd=#{passwd}
+	</select>
+	
 </mapper>

@@ -1,5 +1,7 @@
 package com.homepage.service;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,16 @@ public class MemberService {
 		}
 		return result;
 		
+	}
+	
+	//로그인 체크
+	public Boolean loginCheck(HashMap<String,String> map) {
+		boolean result = false;
+		int n = dao.loginCheck(map);
+		if(n == 1) {
+			result = true;
+		}
+		return result;
 	}
 	
 	//ID 중복체크

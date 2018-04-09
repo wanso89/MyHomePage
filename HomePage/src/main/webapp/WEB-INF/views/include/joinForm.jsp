@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css"	href="<%=contextPath%>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css"	href="<%=contextPath%>/css/css.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="<%=contextPath%>/js/js.js"></script>
+<script src="<%=contextPath%>/js/memberCheck.js"></script>
 
 <div class="contentwrap">
 	<article class="container">
@@ -47,7 +47,7 @@
 				<label for="inputName" class="col-sm-2 control-label"></label>
 				<div class="col-sm-6">
 					<input type="button" class="btn btn-warning" id="memberJoin" value="가입">
-					<input type="reset" class="btn btn-primary" value="취소">
+					<input type="button" class="btn btn-primary" id="memberJoinCancle" value="취소">
 				</div>
 			</div>
 		</form>

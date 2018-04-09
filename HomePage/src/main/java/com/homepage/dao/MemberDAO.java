@@ -1,5 +1,7 @@
 package com.homepage.dao;
 
+import java.util.HashMap;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,4 +24,8 @@ public class MemberDAO {
 		return template.selectOne("MemberMapper.idCheck",userid);
 	}
 	
+	//로그인 체크
+	public int loginCheck(HashMap<String,String> map) {
+		return template.selectOne("MemberMapper.loginCheck",map);
+	}
 }

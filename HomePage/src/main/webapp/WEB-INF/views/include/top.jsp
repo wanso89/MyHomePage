@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% String contextPath=request.getContextPath(); %>
 <link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/css.css"/>
@@ -19,12 +22,28 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <c:if test="${empty login}">
                     <li class="page-scroll">
                         <a href="joinForm">회원가입</a>
                     </li>
+                    </c:if>
+                    
+                    <c:if test="${!empty login}">
+                    <li class="page-scroll">
+                        <a href="#">AboutMe</a>
+                    </li>
+                    </c:if>
+                    
+                    <c:if test="${empty login}">
                     <li class="page-scroll">
                         <a href="loginForm">로그인</a>
                     </li>
+                    </c:if>
+                    <c:if test="${!empty login}">
+                    <li class="page-scroll">
+                        <a href="#">로그아웃</a>
+                    </li>
+                    </c:if>
                     <li class="page-scroll">
                         <a href="boardForm">게시판</a>
                     </li>

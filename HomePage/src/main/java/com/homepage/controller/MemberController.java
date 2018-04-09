@@ -1,8 +1,11 @@
 package com.homepage.controller;
 
+import java.util.HashMap;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,5 +42,12 @@ public class MemberController {
 		return service.idCheck(userid);
 	}
 	
-	
+	//로그인
+	@RequestMapping(value="loginCheck", method=RequestMethod.POST)
+	@ResponseBody
+	public Boolean loginCheck(@RequestParam HashMap<String,String> map,
+			                  HttpSession session) {
+		session.setAttribute("login", map);
+		return service.loginCheck(map);
+	}
 }

@@ -15,8 +15,8 @@ $().ready(function(){
 				}
 		}
 	}) //ajax
-})	//idCHeck (중복체크)
-
+})	//idCHeck (중복체크)notep
+		
 		$("#memberJoin").on('click',function(){
 			var userid = $("#inputUserId").val();
 			var userName = $("#inputUserName").val();
