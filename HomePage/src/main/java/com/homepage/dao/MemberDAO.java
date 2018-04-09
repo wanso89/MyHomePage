@@ -17,5 +17,9 @@ public class MemberDAO {
 		template.insert("MemberMapper.memberJoin",mDTO);
 	}
 	
+	//ID중복체크
+	public int idCheck(String userid) {
+		return template.selectOne("MemberMapper.idCheck",userid);
+	}
 	
 }

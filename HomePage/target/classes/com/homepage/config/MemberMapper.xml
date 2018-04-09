@@ -10,5 +10,12 @@
 	insert into member
 	values(#{userid},#{passwd},#{passwd2},#{username})
 	</insert>
+	
+	<!-- ID중복체크 -->
+	<select id="idCheck" parameterType="string" resultType="int">
+	select count(*) from member
+	where userid=#{userid}
+	</select>
+	
 
 </mapper>
