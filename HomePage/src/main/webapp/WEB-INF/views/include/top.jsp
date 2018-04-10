@@ -30,7 +30,7 @@
                     
                     <c:if test="${!empty login}">
                     <li class="page-scroll">
-                        <a href="#">AboutMe</a>
+                        <a href="aboutMe">About Me</a>
                     </li>
                     </c:if>
                     
@@ -41,11 +41,11 @@
                     </c:if>
                     <c:if test="${!empty login}">
                     <li class="page-scroll">
-                        <a href="#">로그아웃</a>
+                        <a href="logout">로그아웃</a>
                     </li>
                     </c:if>
                     <li class="page-scroll">
-                        <a href="boardForm">게시판</a>
+                        <a href="loginAfter/boardForm">게시판</a>
                     </li>
                 </ul>
             </div>

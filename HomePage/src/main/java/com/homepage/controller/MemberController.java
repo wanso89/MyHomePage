@@ -23,7 +23,7 @@ public class MemberController {
 	
 	
 	//메인페이지 이동
-	@RequestMapping(value="indexPage")
+	@RequestMapping(value="/indexPage")
 	public ModelAndView indexPage() {
 		return new ModelAndView("redirect:/");
 	}
@@ -50,4 +50,14 @@ public class MemberController {
 		session.setAttribute("login", map);
 		return service.loginCheck(map);
 	}
+	
+	//로그아웃
+	@RequestMapping(value="/loginAfter/logout")
+	public ModelAndView logout(HttpSession session) {
+		session.invalidate();
+		return new ModelAndView("redirect:/");
+	}
+	
+	
+	
 }
