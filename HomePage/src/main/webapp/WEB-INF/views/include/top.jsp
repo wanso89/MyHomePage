@@ -14,7 +14,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="indexPage">웹개발 연습용 홈페이지</a>
+                <a class="navbar-brand" href="/dddd/indexPage">웹개발 연습용 홈페이지</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -30,7 +30,7 @@
                     
                     <c:if test="${!empty login}">
                     <li class="page-scroll">
-                        <a href="aboutMe">About Me</a>
+                        <a href="/dddd/loginAfter/aboutMe">About Me</a>
                     </li>
                     </c:if>
                     
@@ -41,11 +41,11 @@
                     </c:if>
                     <c:if test="${!empty login}">
                     <li class="page-scroll">
-                        <a href="logout">로그아웃</a>
+                        <a href="/dddd/loginAfter/logout">로그아웃</a>
                     </li>
                     </c:if>
                     <li class="page-scroll">
-                        <a href="loginAfter/boardForm">게시판</a>
+                        <a href="/dddd/loginAfter/boardForm">게시판</a>
                     </li>
                 </ul>
             </div>
