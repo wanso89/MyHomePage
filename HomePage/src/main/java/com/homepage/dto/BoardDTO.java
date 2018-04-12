@@ -10,6 +10,14 @@ public class BoardDTO {
 	private String author;
 	private String writeday;
 	private int readCnt;
+	private String content;
+	
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	public int getNum() {
 		return num;
 	}
@@ -40,6 +48,13 @@ public class BoardDTO {
 	public void setReadCnt(int readCnt) {
 		this.readCnt = readCnt;
 	}
+	
+	@Override
+	public String toString() {
+		return "BoardDTO [num=" + num + ", title=" + title + ", author=" + author + ", writeday=" + writeday
+				+ ", readCnt=" + readCnt + ", content=" + content + "]";
+	}
+	
 	
 	
 	

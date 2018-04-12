@@ -24,9 +24,12 @@
 	
 	<mvc:view-controller path="/" view-name="index"/>
 	<mvc:view-controller path="joinForm" view-name="joinForm"/>
+	<!-- 
 	<mvc:view-controller path="loginAfter/boardForm" view-name="boardForm"/>
+	 -->
 	<mvc:view-controller path="loginForm" view-name="loginForm"/>
 	<mvc:view-controller path="loginAfter/aboutMe" view-name="aboutMe"/>
+	<mvc:view-controller path="loginAfter/boardWriteUI" view-name="boardWrite"/>
 	
 	<mvc:interceptors>
 		<mvc:interceptor>

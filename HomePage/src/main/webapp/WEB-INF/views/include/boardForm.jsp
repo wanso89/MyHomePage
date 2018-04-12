@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<% String contextPath = request.getContextPath(); %>
-<link rel="stylesheet" type="text/css"	href="<%=contextPath%>/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css"	href="<%=contextPath%>/css/css.css" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link rel="stylesheet" type="text/css"	href="<c:url value='/css/bootstrap.css'/>" />
+<link rel="stylesheet" type="text/css"	href="<c:url value='/css/css.css'/>" />
 
 
 <div class="container">
@@ -20,14 +22,16 @@
 			</tr>
 		</thead>
 		<tbody>
+			<c:forEach items="${boardList}" var="boardList">
 			<tr>
-				<td>1</td>
-				<td>하이</td>
-				<td>관리자</td>
-				<td>2018-04-09</td>
-				<td>0</td>
+				<td>${boardList.num}</td>
+				<td>${boardList.title}</td>
+				<td>${login.userid}</td>
+				<td>${boardList.writeday}</td>
+				<td>${boardList.readCnt}</td>
 			</tr>
+			</c:forEach>
 		</tbody>
 	</table>
-	<a class="btn btn-default pull-right" href="#" role="button">글쓰기</a>
+	<a class="btn btn-default pull-right" href="<c:url value='/loginAfter/boardWriteUI'/>" role="button">글쓰기</a>
 </div>

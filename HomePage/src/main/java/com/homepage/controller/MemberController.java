@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.homepage.dto.MemberDTO;
 import com.homepage.service.MemberService;
@@ -53,8 +54,9 @@ public class MemberController {
 	
 	//로그아웃
 	@RequestMapping(value="/loginAfter/logout")
-	public ModelAndView logout(HttpSession session) {
+	public ModelAndView logout(HttpSession session, RedirectAttributes attrs) {
 		session.invalidate();
+		attrs.addFlashAttribute("logout", "정상적으로 로그아웃이 되었습니다.");
 		return new ModelAndView("redirect:/");
 	}
 	

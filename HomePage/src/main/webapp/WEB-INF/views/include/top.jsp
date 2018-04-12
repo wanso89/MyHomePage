@@ -3,17 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<% String contextPath=request.getContextPath(); %>
-<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/css.css"/>
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/bootstrap.css'/>"/>
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/css.css'/>" />
 
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
                 <a class="navbar-brand" href="/dddd/indexPage">웹개발 연습용 홈페이지</a>
             </div>
 
@@ -30,7 +26,7 @@
                     
                     <c:if test="${!empty login}">
                     <li class="page-scroll">
-                        <a href="/dddd/loginAfter/aboutMe">About Me</a>
+                        <a href="<c:url value='/loginAfter/aboutMe'/>">About Me</a>
                     </li>
                     </c:if>
                     
@@ -41,11 +37,11 @@
                     </c:if>
                     <c:if test="${!empty login}">
                     <li class="page-scroll">
-                        <a href="/dddd/loginAfter/logout">로그아웃</a>
+                        <a href="<c:url value='/loginAfter/logout'/>">로그아웃</a>
                     </li>
                     </c:if>
                     <li class="page-scroll">
-                        <a href="/dddd/loginAfter/boardForm">게시판</a>
+                        <a href="<c:url value='/loginAfter/boardForm'/>">게시판</a>
                     </li>
                 </ul>
             </div>
