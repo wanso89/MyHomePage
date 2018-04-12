@@ -28,4 +28,17 @@ public class BoardService {
 		}
 		return result;
 	}
+	
+	public BoardDTO boardRetrieve(int num) {
+		return dao.boardRetrieve(num);
+	}
+	
+	public Boolean boardUpdate(BoardDTO bDTO) {
+		boolean result = false;
+		int n = dao.boardUpdate(bDTO);
+		if (n>0) {
+			result = true;
+		}
+		return result;
+	}
 }

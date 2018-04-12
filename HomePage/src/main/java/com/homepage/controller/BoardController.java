@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,5 +31,20 @@ public class BoardController {
 	public ModelAndView boardList() {
 		List<BoardDTO> boardList = service.boardList();
 		return new ModelAndView("boardForm","boardList",boardList);
+	}
+	
+	// 글 자세히보기
+	@RequestMapping(value="/loginAfter/boardRetrieve")
+	public ModelAndView boardRetrieve(@RequestParam int num) {
+		BoardDTO boardRetrieve = service.boardRetrieve(num);
+		return new ModelAndView("boardRetrieve","boardRetrieve",boardRetrieve);
+	}
+	
+	// 글 수정하기
+	@RequestMapping(value="/loginAfter/boardUpdate")
+	@ResponseBody
+	public Boolean boardUpdate(BoardDTO bDTO) {
+		return service.boardUpdate(bDTO);
+		
 	}
 }

@@ -25,4 +25,30 @@ public class BoardDAO {
 		int n = template.insert("BoardMapper.boardWrite",bDTO);
 		return n;
 	}
+	
+	//글 자세히보기
+	public BoardDTO boardRetrieve(int num){
+		readCntAdd(num);
+		return template.selectOne("BoardMapper.boardRetrieve",num);
+	}
+	
+	//조회수 증가
+	private void readCntAdd(int num) {
+		template.update("BoardMapper.readCntAdd",num);
+	}
+	
+	//글 수정하기
+	public int boardUpdate(BoardDTO bDTO) {
+		int n = template.update("BoardMapper.boardUpdate",bDTO);
+		return n;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

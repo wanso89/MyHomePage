@@ -16,5 +16,26 @@
 	insert into board(num,author,title,content)
 	values(board_seq.nextval,#{author},#{title},#{content})
 	</insert>
-
+	
+	<!--  글  자세히보기 -->
+	<select id="boardRetrieve" parameterType="int" resultType="BoardDTO">
+	select num, title, author, to_char(writeday,'yyyy/mm/dd') writeday, content, readcnt
+	from board
+	where num = #{num}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="readCntAdd" parameterType="int">
+	update board
+	set readcnt = readcnt + 1
+	where num = #{num}
+	</update>
+	
+	<!-- 글 수정하기 -->
+	<update id="boardUpdate" parameterType="BoardDTO">
+	update board
+	set title=#{title}, content=#{content}
+	where author=#{author}
+	</update>
+	
 </mapper>
