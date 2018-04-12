@@ -26,7 +26,7 @@
 			<tr>
 				<td>${boardList.num}</td>
 				<td>${boardList.title}</td>
-				<td>${login.userid}</td>
+				<td>${boardList.author}</td>
 				<td>${boardList.writeday}</td>
 				<td>${boardList.readCnt}</td>
 			</tr>
