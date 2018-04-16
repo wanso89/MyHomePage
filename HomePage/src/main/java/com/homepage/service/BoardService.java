@@ -1,13 +1,13 @@
 package com.homepage.service;
 
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.homepage.dao.BoardDAO;
 import com.homepage.dto.BoardDTO;
+import com.homepage.dto.PageDTO;
 
 @Service
 public class BoardService {
@@ -16,8 +16,8 @@ public class BoardService {
 	@Autowired
 	BoardDAO dao;
 	
-	public List<BoardDTO> boardList(){
-		return dao.boardList();
+	public PageDTO boardList(int curPage,HashMap<String,String> map){
+		return dao.boardList(curPage, map);
 	}
 	
 	public Boolean boardWrite(BoardDTO bDTO) {
@@ -43,9 +43,13 @@ public class BoardService {
 		return result;
 	}
 	
-	public List<BoardDTO> boardSearch(HashMap<String,String> map){
-		return dao.boardSearch(map);
+	public Boolean boardDelete(int num) {
+		boolean result = false;
+		int n = dao.boardDelete(num);
+		if(n>0) {
+			result = true;
+		}
+		return result;
 	}
-	
 	
 }

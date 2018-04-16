@@ -13,7 +13,6 @@ $().ready(function(){
 				if(result){
 					alert("내용 수정이 완료되었습니다.");
 				}
-				
 				location.href="/dddd/loginAfter/boardForm";
 			}
 		})

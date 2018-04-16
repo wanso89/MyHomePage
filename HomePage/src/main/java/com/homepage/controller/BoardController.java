@@ -1,7 +1,6 @@
 package com.homepage.controller;
 
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.homepage.dto.BoardDTO;
+import com.homepage.dto.PageDTO;
 import com.homepage.service.BoardService;
 
 @Controller
@@ -20,6 +20,14 @@ public class BoardController {
 	@Autowired
 	BoardService service;
 	
+	// 글 전체목록보기
+		@RequestMapping(value="/loginAfter/boardForm")
+		public ModelAndView boardList(@RequestParam(required=false, defaultValue="1") int curPage,
+										@RequestParam HashMap<String,String> map) {
+			PageDTO pDTO = service.boardList(curPage, map);
+			return new ModelAndView("boardForm","pDTO",pDTO);
+	}
+		
 	//글 작성하기
 	@RequestMapping(value="/loginAfter/boardWrite")
 	@ResponseBody
@@ -27,12 +35,6 @@ public class BoardController {
 		return service.boardWrite(bDTO);
 	}
 	
-	// 글 전체목록보기
-	@RequestMapping(value="/loginAfter/boardForm")
-	public ModelAndView boardList() {
-		List<BoardDTO> boardList = service.boardList();
-		return new ModelAndView("boardForm","boardList",boardList);
-	}
 	
 	// 글 자세히보기
 	@RequestMapping(value="/loginAfter/boardRetrieve")
@@ -48,13 +50,12 @@ public class BoardController {
 		return service.boardUpdate(bDTO);
 	}
 	
-	// 글 검색하기
-	@RequestMapping(value="/loginAfter/boardSearch")
-	public ModelAndView boardSearch(@RequestParam HashMap<String,String> map) {
-		List<BoardDTO> boardList = service.boardSearch(map);
-		return new ModelAndView("boardForm","boardList",boardList);
+	// 글 삭제하기
+	@RequestMapping(value="loginAfter/boardDelete")
+	@ResponseBody
+	public Boolean boardDelete(@RequestParam int num) {
+		return service.boardDelete(num);
 	}
-	
 	
 	
 	

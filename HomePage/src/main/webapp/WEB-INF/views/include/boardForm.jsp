@@ -11,7 +11,7 @@
 		<h1>게시판</h1>
 	</div>
 	
-	<form class="form-inline pull-right" action="<c:url value='boardSearch'/>" method="post">
+	<form class="form-inline pull-right" action="<c:url value='boardForm'/>" method="post">
   		<div class="form-group">
   	 		<select class="form-control" name="searchName" style="width:100px;height:35px;">
 					  <option value="author">작성자</option>
@@ -37,7 +37,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${boardList}" var="boardList">
+			<c:set var="pageDTO" value="${pDTO}"></c:set>
+			<c:forEach items="${pageDTO.boardList}" var="boardList">
 			<tr>
 				<td>${boardList.num}</td>
 				<td><a href="/dddd/loginAfter/boardRetrieve?num=${boardList.num}">${boardList.title}</a></td>
@@ -46,7 +47,8 @@
 				<td>${boardList.readCnt}</td>
 			</tr>
 			</c:forEach>
+			
 		</tbody>
 	</table>
-	<a class="btn btn-default pull-right" href="<c:url value='/loginAfter/boardWriteUI'/>" role="button">글쓰기</a>
+	<jsp:include page="page.jsp" flush="true" />
 </div>

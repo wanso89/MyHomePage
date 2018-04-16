@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css"	href="<c:url value='/css/css.css'/>" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="<c:url value='/js/boardUpdate.js' />"></script>
+<script src="<c:url value='/js/boardDelete.js' />"></script>
 
 <div class="contentwrap">
 	<article class="container">
@@ -17,7 +18,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-sm-2 control-label">글번호</label>
 					<div class="col-sm-6">
-						<input class="form-control" type="text" name="num" value="${boardRetrieve.num}" disabled/>
+						<input class="form-control" id="inputNum" type="text" name="num" value="${boardRetrieve.num}" readonly/>
 					</div>
 			</div>
 			<div class="form-group">
@@ -48,6 +49,7 @@
 			<div class="form-group">
 				<div class="col-sm-12">
 					<button id="boardListForm" class="btn btn-default pull-right">목록</button>
+					<button id="boardDelete" class="btn btn-primary pull-right">삭제</button>
 					<button id="boardUpdate" class="btn btn-warning pull-right">수정</button>
 				</div>
 			</div>

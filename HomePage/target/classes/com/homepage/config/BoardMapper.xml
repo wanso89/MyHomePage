@@ -5,11 +5,35 @@
 <mapper namespace="BoardMapper">
 	
 	<!-- 글 전체목록보기 -->
-	<select id="boardList" resultType="BoardDTO">
+	<select id="boardList" parameterType="hashmap" resultType="BoardDTO">
 	select num, title, author, to_char(writeday,'yyyy/mm/dd') writeday, readcnt 
 	from board
+	<if test="searchName == 'title'">
+	where title like '%' || #{searchValue} || '%'
+	</if>
+	<if test="searchName == 'author'">
+	where author like '%' || #{searchValue} || '%'
+	</if>
 	order by num desc
 	</select>
+	
+	<!-- 글 전체 개수 -->
+	<select id="totalCount" resultType="int">
+	select count(*) from board
+	</select>
+	
+	<!-- 글 검색 개수 -->
+	<select id="searchCount" parameterType="hashmap" resultType="int">
+	select count(*) from board
+	<if test="searchName == 'title'">
+	where title like '%' || #{searchValue} || '%'
+	</if>
+	<if test="searchName == 'author'">
+	where author like '%' || #{searchValue} || '%'
+	</if>
+	</select>
+	
+	
 	
 	<!-- 게시판 글쓰기 -->
 	<insert id="boardWrite" parameterType="BoardDTO">
@@ -35,22 +59,14 @@
 	<update id="boardUpdate" parameterType="BoardDTO">
 	update board
 	set title=#{title}, content=#{content}
-	where author=#{author}
+	where num=#{num}
 	</update>
 	
-	<!--  글 검색하기 -->
-	<select id="boardSearch" parameterType="hashmap" resultType="BoardDTO">
-	select num, title, author, to_char(writeday,'yyyy/mm/dd') writeday, readcnt
-	from board
-	<if test="searchName == 'title'">
-	where title like '%' || #{searchValue} || '%'
-	</if>
-	<if test="searchName == 'author'">
-	where author like '%' || #{searchValue} || '%'
-	</if>
-	order by num desc
-	</select>
-	
+	<!-- 글 삭제하기 -->
+	<delete id="boardDelete" parameterType="int">
+	delete from board
+	where num=#{num}
+	</delete>
 	
 	
 </mapper>
