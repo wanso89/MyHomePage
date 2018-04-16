@@ -6,11 +6,26 @@
 <link rel="stylesheet" type="text/css"	href="<c:url value='/css/bootstrap.css'/>" />
 <link rel="stylesheet" type="text/css"	href="<c:url value='/css/css.css'/>" />
 
-
 <div class="container">
 	<div class="page-header">
 		<h1>게시판</h1>
 	</div>
+	
+	<form class="form-inline pull-right" action="<c:url value='boardSearch'/>" method="post">
+  		<div class="form-group">
+  	 		<select class="form-control" name="searchName" style="width:100px;height:35px;">
+					  <option value="author">작성자</option>
+					  <option value="title">제   목</option>
+			</select>		
+ 		 </div>
+ 			 <div class="form-group mx-sm-3">
+			    <label for="inputPassword2" class="sr-only">Password</label>
+			    <input type="text" class="form-control" name="searchValue" id="inputPassword2" placeholder="내용 입력">
+			 </div>
+ 				 <button type="submit" class="btn btn-warning">검색</button>
+	</form>
+	
+	
 	<table class="table table-striped">
 		<thead>
 			<tr>

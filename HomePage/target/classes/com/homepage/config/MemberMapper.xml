@@ -24,4 +24,5 @@
 	and passwd=#{passwd}
 	</select>
 	
+	
 </mapper>

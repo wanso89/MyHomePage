@@ -1,5 +1,6 @@
 package com.homepage.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -43,7 +44,10 @@ public class BoardDAO {
 		return n;
 	}
 	
-	
+	//글 검색하기
+	public List<BoardDTO> boardSearch(HashMap<String,String> map){
+		return template.selectList("BoardMapper.boardSearch",map);
+	}
 	
 	
 	

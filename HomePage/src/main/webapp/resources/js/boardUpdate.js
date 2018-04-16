@@ -11,7 +11,6 @@ $().ready(function(){
 			data : params,
 			success : function(result){
 				if(result){
-					console.log("ㅎㅎㅎ");
 					alert("내용 수정이 완료되었습니다.");
 				}
 				

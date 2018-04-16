@@ -1,5 +1,6 @@
 package com.homepage.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,22 @@ public class BoardController {
 	@ResponseBody
 	public Boolean boardUpdate(BoardDTO bDTO) {
 		return service.boardUpdate(bDTO);
-		
 	}
+	
+	// 글 검색하기
+	@RequestMapping(value="/loginAfter/boardSearch")
+	public ModelAndView boardSearch(@RequestParam HashMap<String,String> map) {
+		List<BoardDTO> boardList = service.boardSearch(map);
+		return new ModelAndView("boardForm","boardList",boardList);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

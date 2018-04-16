@@ -1,5 +1,6 @@
 package com.homepage.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,4 +42,10 @@ public class BoardService {
 		}
 		return result;
 	}
+	
+	public List<BoardDTO> boardSearch(HashMap<String,String> map){
+		return dao.boardSearch(map);
+	}
+	
+	
 }

@@ -38,4 +38,19 @@
 	where author=#{author}
 	</update>
 	
+	<!--  글 검색하기 -->
+	<select id="boardSearch" parameterType="hashmap" resultType="BoardDTO">
+	select num, title, author, to_char(writeday,'yyyy/mm/dd') writeday, readcnt
+	from board
+	<if test="searchName == 'title'">
+	where title like '%' || #{searchValue} || '%'
+	</if>
+	<if test="searchName == 'author'">
+	where author like '%' || #{searchValue} || '%'
+	</if>
+	order by num desc
+	</select>
+	
+	
+	
 </mapper>
