@@ -1,5 +1,8 @@
 $().ready(function(){
-		
+	
+	
+	
+	
 	 $("#idCheck").on('click',function(){
 		$.ajax({
 			url : "idCheck",
@@ -15,18 +18,17 @@ $().ready(function(){
 				}
 		}
 	}) //ajax
-})	//idCHeck (중복체크)notep
-		
+})	//idCHeck (중복체크)
+	
 		$("#memberJoin").on('click',function(){
-			var userid = $("#inputUserId").val();
-			var userName = $("#inputUserName").val();
 			var userPasswd = $("#inputUserPassword").val();
 			var userPasswdCheck = $("#inputUserPasswordCheck").val();
-			
+			var userid = $("#inputUserId").val();
+			var userName = $("#inputUserName").val();
 			var rgExp_kr = /([^가-힣ㄱ-ㅎㅏ-ㅣ\x20])/i;;
 			
 			if(userName.length == 0){
-				alert("이름을 입력하세요.");
+				alert('이름을 입력하세요');
 				$("#inputUserName").focus();
 				return false;
 			} else if(rgExp_kr.test(userName)){
@@ -51,8 +53,10 @@ $().ready(function(){
 				return false;
 			}
 			
+			
 			var params = $("#memberForm").serialize();
 				$.ajax({
+					
 					url : "memberJoin",
 					type : "post",
 					data : params,

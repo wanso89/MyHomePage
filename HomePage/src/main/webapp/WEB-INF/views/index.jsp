@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css"	href="<c:url value='css/bootstrap.css'/>"/>
 <link rel="stylesheet" type="text/css"	href="<c:url value='/css/css.css'/>" />
-<title>Insert title here</title>
+<title>웹개발 연습-한인섭</title>
 </head>
 <body>
 

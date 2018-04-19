@@ -1,4 +1,7 @@
 $().ready(function(){
+	
+	
+	
 	$("#loginCancle").on('click',function(){
 		location.href="/dddd";
 	});

@@ -1,6 +1,7 @@
 package com.homepage.service;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class BoardService {
 		return result;
 	}
 	
-	public BoardDTO boardRetrieve(int num) {
+	public HashMap<String,Object> boardRetrieve(int num) {
 		return dao.boardRetrieve(num);
 	}
 	

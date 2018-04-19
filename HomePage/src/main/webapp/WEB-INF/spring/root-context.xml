@@ -23,12 +23,14 @@
 			<list>
 				<value>classpath:com/homepage/config/MemberMapper.xml</value>
 				<value>classpath:com/homepage/config/BoardMapper.xml</value>
+				<value>classpath:com/homepage/config/CommentMapper.xml</value>
 			</list>
 		</property>
 		<property name="typeAliases">
 			<list>
 				<value>com.homepage.dto.MemberDTO</value>
 				<value>com.homepage.dto.BoardDTO</value>
+				<value>com.homepage.dto.CommentDTO</value>
 			</list>
 		</property>
 	</bean>

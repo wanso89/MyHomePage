@@ -1,6 +1,7 @@
 package com.homepage.controller;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,11 +37,11 @@ public class BoardController {
 	}
 	
 	
-	// 글 자세히보기
+	// 글 자세히보기 및 댓글처리
 	@RequestMapping(value="/loginAfter/boardRetrieve")
 	public ModelAndView boardRetrieve(@RequestParam int num) {
-		BoardDTO boardRetrieve = service.boardRetrieve(num);
-		return new ModelAndView("boardRetrieve","boardRetrieve",boardRetrieve);
+		HashMap<String,Object> board_Comment = service.boardRetrieve(num);
+		return new ModelAndView("boardRetrieve","map",board_Comment);
 	}
 	
 	// 글 수정하기
@@ -56,13 +57,4 @@ public class BoardController {
 	public Boolean boardDelete(@RequestParam int num) {
 		return service.boardDelete(num);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

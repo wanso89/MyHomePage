@@ -33,8 +33,6 @@
 	</if>
 	</select>
 	
-	
-	
 	<!-- 게시판 글쓰기 -->
 	<insert id="boardWrite" parameterType="BoardDTO">
 	insert into board(num,author,title,content)
@@ -43,9 +41,9 @@
 	
 	<!--  글  자세히보기 -->
 	<select id="boardRetrieve" parameterType="int" resultType="BoardDTO">
-	select num, title, author, to_char(writeday,'yyyy/mm/dd') writeday, content, readcnt
+	select num, title, author, to_char(writeday,'yyyy/mm/dd') writeday, readcnt, content
 	from board
-	where num = #{num}
+	where num=#{num}
 	</select>
 	
 	<!-- 조회수 증가 -->

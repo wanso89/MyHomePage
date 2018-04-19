@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CommentMapper">
+	
+	
+	<!-- 댓글 쓰기 -->
+	<insert id="commentWrite" parameterType="hashmap">
+	insert into boardcomment(commentNum,commentAuthor,commentContent,commentPasswd,boardContainNum)
+	values(boardcomment_seq.nextval,#{commentAuthor},#{commentContent},#{commentPasswd},#{num})
+	</insert>
+	
+	<!-- 댓글리스트 -->
+	<select id="commentList" parameterType="int" resultType="CommentDTO">
+	select commentAuthor, commentContent, commentWriteday
+	from boardcomment
+	where boardContainNum = #{num}
+	order by commentNum desc
+	</select>
+	
+	
+	
+	
+	
+</mapper>

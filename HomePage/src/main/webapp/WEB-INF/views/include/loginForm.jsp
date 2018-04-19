@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css"	href="<c:url value='/css/css.css'/>" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="<c:url value='/js/loginCheck.js'/>"></script>
-
 <div class="container">
 	<div class="page-header">
 		<h1>로그인</h1>

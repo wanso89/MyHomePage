@@ -34,7 +34,6 @@
 				<div class="col-sm-6">
 					<input type="password" class="form-control" id="inputUserPassword" name="passwd"
 						placeholder="비밀번호">
-					<p class="help-block">숫자, 특수문자 포함 5자 이상</p>
 				</div>
 			</div>
 			<div class="form-group">
@@ -42,16 +41,16 @@
 				<div class="col-sm-6">
 					<input type="password" class="form-control" id="inputUserPasswordCheck" name="passwd2"
 						placeholder="비밀번호 확인">
-					<p class="help-block">비밀번호를 한번 더 입력하세요</p>
+					<p class="help-block" id="check"></p>
 				</div>
 			</div>
-			<div class="form-group">
+		</form>
+		<div class="form-group">
 				<label for="inputName" class="col-sm-2 control-label"></label>
 				<div class="col-sm-6">
 					<input type="button" class="btn btn-warning" id="memberJoin" value="가입">
 					<input type="button" class="btn btn-primary" id="memberJoinCancle" value="취소">
 				</div>
-			</div>
-		</form>
+		</div>
 	</article>
 </div>
