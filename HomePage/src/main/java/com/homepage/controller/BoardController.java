@@ -17,7 +17,6 @@ import com.homepage.service.BoardService;
 @Controller
 public class BoardController {
 
-	
 	@Autowired
 	BoardService service;
 	
@@ -36,11 +35,11 @@ public class BoardController {
 		return service.boardWrite(bDTO);
 	}
 	
-	
 	// 글 자세히보기 및 댓글처리
 	@RequestMapping(value="/loginAfter/boardRetrieve")
 	public ModelAndView boardRetrieve(@RequestParam int num) {
 		HashMap<String,Object> board_Comment = service.boardRetrieve(num);
+		System.out.println(board_Comment.get("comment"));
 		return new ModelAndView("boardRetrieve","map",board_Comment);
 	}
 	

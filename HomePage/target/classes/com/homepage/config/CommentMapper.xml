@@ -13,7 +13,7 @@
 	
 	<!-- 댓글리스트 -->
 	<select id="commentList" parameterType="int" resultType="CommentDTO">
-	select commentAuthor, commentContent, commentWriteday
+	select commentAuthor, commentContent, to_char(commentwriteday,'yyyy/mm/dd') commentwriteday
 	from boardcomment
 	where boardContainNum = #{num}
 	order by commentNum desc

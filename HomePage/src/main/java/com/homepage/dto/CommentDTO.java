@@ -9,7 +9,7 @@ public class CommentDTO {
 	private String commentAuthor;
 	private String commentContent;
 	private String commentPasswd;
-	private String comentWriteday;
+	private String commentWriteday;
 	
 	public int getCommentNum() {
 		return commentNum;
@@ -35,17 +35,17 @@ public class CommentDTO {
 	public void setCommentPasswd(String commentPasswd) {
 		this.commentPasswd = commentPasswd;
 	}
-	public String getComentWriteday() {
-		return comentWriteday;
+	public String getCommentWriteday() {
+		return commentWriteday;
 	}
-	public void setComentWriteday(String comentWriteday) {
-		this.comentWriteday = comentWriteday;
+	public void setCommentWriteday(String commentWriteday) {
+		this.commentWriteday = commentWriteday;
 	}
 	
 	@Override
 	public String toString() {
 		return "CommentDTO [commentNum=" + commentNum + ", commentAuthor=" + commentAuthor + ", commentContent="
-				+ commentContent + ", commentPasswd=" + commentPasswd + ", comentWriteday=" + comentWriteday + "]";
+				+ commentContent + ", commentPasswd=" + commentPasswd + ", commentWriteday=" + commentWriteday + "]";
 	}
 	
 	

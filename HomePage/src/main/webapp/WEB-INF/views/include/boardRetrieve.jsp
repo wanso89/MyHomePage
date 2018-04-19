@@ -63,7 +63,7 @@
 			<table id="commentTable" class="table table-info">
 				<c:forEach items="${comment}" var="comment">
 					<tr class="active">
-						<td>${comment.commentAuthor}&nbsp;&nbsp;${comment.commentContent}</td>
+						<td>${comment.commentAuthor}&nbsp;&nbsp;${comment.commentContent}&nbsp;&nbsp;${comment.commentWriteday}</td>
 					</tr>
 				</c:forEach>
 			</table>
